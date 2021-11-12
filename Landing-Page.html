@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/> 
+        <meta name="viewport" content="=width=device, initial-scale=1.0"/>
+        <title>Smith Electric</title>
+        
+
+    </head>
+    <style>
+.row {
+       display: flex;
+       width: 100%
+     }
+     .row::after {
+      /* display: block;*/
+        clear: both;
+         content: "";
+            }
+            .col-1 {width: 8.33%};
+.col-2 {width: 16%;
+        color: burlywood;}
+.col-3 {width: 50%;
+        opacity: .7;
+        color: chocolate;}
+.col-4 {width: 33.33%;
+        color: burlywood;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;
+        opacity: .7;
+        color: chocolate;}
+.col-7 {width: 25%;
+        color: burlywood;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+* {
+    box-sizing: border-box;
+  }
+  [class*="col-"]{
+             
+             padding: 15px;
+             float: left;
+                }                           
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 10px;
+  padding: 25px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  opacity: 0.7;
+}
+#background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+ .stretch {
+  width: 100%;
+  height: 100%;
+}
+  .logo {
+  display: flex;
+  width: 100%;
+  top: 0px;
+  left: 0px;  
+  }
+
+  .navbar {
+   position: fixed;
+}
+  .content {
+   background-color: gray;
+   width: 20%;
+   opacity: .5;
+}
+  body {
+    font-family: calibri;
+    color: burlywood;
+    background-color: black;
+    line-height: 1.4;
+    width: 100%;
+  }
+  
+@media screen and (max-width: 500x) {
+  body {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 992px) { 
+  body {
+    background-color: tan;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+}
+    
+    
+
+    </style> 
+<body>
+    <h1> <u>Smith Industrial</u></h1>
+  
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4q9PP-VQQfwm6fSJT0mzFFWAJlI9-g4ywoQ&usqp=CAU"
+                 
+                 alt="smith-logo"
+                 border="0"
+                 id="header-img"
+                 width="150px";
+                 >
+                 <div class="container">
+                    <div class="row">
+                         <div class="col-3">
+                            <h2>Residential Service</h2>
+                        
+                 </div>
+             
+                         </div>
+                         <div class="col-6">
+                           <h2>Commercial Service</h2>
+                         </div>
+                         <div class="col-3">
+                           <h2>Industrial Service</h2>
+                         </div>
+                     </div>
+                    <div class="row">
+                      <div class="col-2">
+                           <p>Diagnose and repair<br>
+                        Install wiring<br>Solar Panels</p>
+                       </div>
+                       <div class="col-7">
+                            <p>Ground up construction<br>Permits<br>Inspections</p>
+                       </div>
+                       <div class="col-4">
+                           <p>A/V networking<br>Machine Repair<br>Energy Management</p>
+                       </div>
+                    </div>   
+                 </div>            
+              <section id="residential"> </section>
+              <section id="commercial">
+              </section>
+              <section id="industrial">
+                </section>
+              <iframe
+                      id="video"
+                      width="290"
+                      height="290"
+                      align="right"
+                      src="https://www.youtube.com/watch?v=mUMEslWhQxU"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+              </iframe>
+              </div>
+              
+              
+              
+              
+            
+                  
+                  
+               <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <label for="name" 
+                       id="name-label">Name</label>
+                <input id="name"
+                       type="text" 
+                       name="name"
+                       placeholder="Enter your name" 
+                       required> </input>
+              <br><br>
+                
+                
+              <label for="email" id="email-label">Email</label>
+              <input id="email"
+                     type="email"
+                     name="email"
+                     placeholder="Enter your email"
+                     class="email"
+                     required> </input><br><br>
+            
+            <label for="number" id="number-label">Address</label> 
+            <input id="number"
+                   type="number"
+                   name="number"
+                   placeholder="address"
+                         required></input><br><br>
+                                       
+                 </form>
+      </div>
+
+            
+
+      <script src="js/bootstrap.min.js"></script>
+      <div id="background">
+          <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fv.fastcdn.co%2Fu%2F74655bc3%2F49958455-0-Virtuance-Real-Estat.jpg&f=1&nofb=1"
+          class="stretch"
+          alt="home-logo"/>
+
+          </div>
+          
+          
+    </body>
+</html>
