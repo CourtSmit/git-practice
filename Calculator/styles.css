@@ -1,38 +1,38 @@
 *, *::before, *::after {
-    box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
-    font-weight: normal;
+  box-sizing: content;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    background: linear-gradient(to right, #232a2e23, #00FF6C);
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #0b3f5e23, rgb(33, 63, 45));
 }
 
 .calculator-grid {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(4, 100px);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(3, 100px);
 }
 
 .calculator-grid > button {
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    background-color: rgba(255, 255, 255, .75);
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
 }
 
 .calculator-grid > button:hover {
-    background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, .9);
 }
 
 .span-two {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 .output {
