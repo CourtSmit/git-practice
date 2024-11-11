@@ -1,0 +1,50 @@
+from flask import Flask, render_template
+import yfinance as yf
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+
+app = Flask(__name__)
+
+# Fetch historical stock data
+def fetch_data(ticker, start_date, end_date):
+    data = yf.download(ticker, start=start_date, end=end_date)
+    return data
+
+# Prepare the data
+def prepare_data(data):
+    data['Return'] = data['Close'].pct_change()
+    data['Direction'] = np.where(data['Return'] > 0, 1, 0)
+    data = data.dropna()
+    return data
+
+# Train the model
+def train_model(data):
+    features = data[['Open', 'High', 'Low', 'Close', 'Volume']]
+    target = data['Direction']
+    X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
+    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    model.fit(X_train, y_train)
+    return model
+
+# Make predictions
+def make_predictions(model, data):
+    features = data[['Open', 'High', 'Low', 'Close', 'Volume']]
+    predictions = model.predict(features)
+    data['Predictions'] = predictions
+    return data
+
+@app.route('/')
+def index():
+    ticker = 'AAPL'
+    start_date = '2020-01-01'
+    end_date = '2023-01-01'
+    data = fetch_data(ticker, start_date, end_date)
+    data = prepare_data(data)
+    model = train_model(data)
+    predictions = make_predictions(model, data)
+    return render_template('index.html', tables=[predictions.tail().to_html(classes='data')], titles=predictions.columns.values)
+
+if __name__ == "__main__":
+    app.run(debug=True)
